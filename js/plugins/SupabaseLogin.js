@@ -120,7 +120,16 @@ Window_LoginCommand.prototype.itemWidth = function() {
         input.style.fontSize = "24px";
         input.style.textAlign = "center";
         input.style.zIndex = '100';
-        document.body.appendChild(input);
+            // ⭐ 讓輸入框永遠置中
+    input.style.left = "50%";
+    input.style.top = "50%";
+    input.style.transform = "translate(-50%, -70%)";  
+    // (-50%, -70%) 表示水平置中，垂直在中心稍微往上（避免跟按鈕重疊）
+
+    // ⭐ 限制輸入框跟隨 canvas，而不是整個 body
+    const parent = document.getElementById("GameCanvas") || document.body;
+    parent.appendChild(input);
+
         this._inputElement = input;
 this._inputElement.addEventListener("keydown", (e) => {
     if (e.key === "Backspace") {
