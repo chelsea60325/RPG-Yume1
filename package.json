@@ -4,7 +4,7 @@
     "chromium-args": "--force-color-profile=srgb --disable-devtools",
     "window": {
         "title": "夢居",
-        "width": 900,
+        "width": 1080,
         "height": 760,
         "position": "center",
         "icon": "icon/icon.png"
